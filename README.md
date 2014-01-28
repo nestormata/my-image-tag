@@ -5,7 +5,7 @@ A [Liquid](http://www.liquidmarkup.org/) filter to generate an HTML img tag in J
 
 ## Installation
 
-All you need to do is to add the `my\_image\_tag.rb` file into your site `\_pluggins` directory.
+All you need to do is to add the `my_image_tag.rb` file into your site `_pluggins` directory.
 
 ## Usage
 

@@ -12,12 +12,12 @@ All you need to do is to add the `my_image_tag.rb` file into your site `_pluggin
 * my\_image\_tag
 
   This function uses the site.url configuration to be appended to the source attribute of the image.  
-  It allow setting class names, ID, alternate text and enclose the image in a div tag (by default).
+  It allow setting class names, ID, alternate text, width, height and enclose the image in a div tag (by default).
 
         {{ '/images/my-image.png' | img_tag: 'class names here' }} => Will render <div class="class names here"><img src="http://www.mysite.com/images/my-image.png" /></div>
         {{ '/images/my-image.png' | img_tag: 'class names here', 'image-id' }} => Will render <div class="class names here" id="image-id"><img src="http://www.mysite.com/images/my-image.png" /></div>
         {{ '/images/my-image.png' | img_tag: 'classname', 'image-id', 'Very cool' }} => Will render <div class="classname" id="image-id"><img src="http://www.mysite.com/images/my-image.png" alt="Very cool" /></div>
-        {{ '/images/my-image.png' | img_tag: 'classname', 'image-id', 'Very cool', false }} => Will render <img src="http://www.mysite.com/images/my-image.png" class="classname" id="image-id" alt="Very cool" />
+        {{ '/images/my-image.png' | img_tag: 'classname', 'image-id', 'Very cool', 100, 50, false }} => Will render <img src="http://www.mysite.com/images/my-image.png" class="classname" id="image-id" alt="Very cool" width="100" height="50" />
 
 ## Contact
 

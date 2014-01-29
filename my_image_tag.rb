@@ -11,15 +11,15 @@
 
 module Jekyll
   module MyImageTag
+    @@base_path = Jekyll.configuration({})['url']
 
-    def img_tag(src, className='', id='', alt='', enclosed = true)
-      full_path = Jekyll.configuration({})['url'] + src
+    def img_tag(src, className='', id='', alt='', width=0, height=0, enclosed = true)
       output = ''
 
       if enclosed then
         output << '<div'
       else
-        output << '<img src="' + full_path + '"'
+        output << "<img src=\"#{@@base_path}#{src}\""
       end
 
       if className.length > 0 then
@@ -32,11 +32,19 @@ module Jekyll
 
       if enclosed then
         output << '>'
-        output << '<img src="' + full_path + '"'
+        output << "<img src=\"#{@@base_path}#{src}\""
       end
 
       if alt.length > 0 then
         output << ' alt="' + alt + '"'
+      end
+
+      if width > 0 then
+        output << ' width="' + width.to_s + '"'
+      end
+
+      if height > 0 then
+        output << ' height="' + height.to_s + '"'
       end
 
       if enclosed then
